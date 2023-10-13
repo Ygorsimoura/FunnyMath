@@ -17,60 +17,86 @@ struct SetGame: View {
     
     
     var body: some View {
-        VStack{
-            Text("FunnyMath")
-                .font(.system(size: 45))
-                .fontWeight(.bold)
-                .fontDesign(.rounded)
-            
-            
-            Rectangle()
-                .foregroundColor(.blue)
-                .opacity(0.25)
-                .frame(width: 247, height: 150)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-            
-            
-            Section { // Set Tables and number of questions
-                Text("\(String(format: "%02d", Int(tables)))")
-                    .font(.system(size: 140))
-                    .padding()
+        ZStack {
+            Color(.sRGB, red: 0xD0 / 255, green: 0x9E / 255, blue: 0xF5 / 255)
+                .ignoresSafeArea()
+            VStack(spacing: 1){
+                Text("FunnyMath")
+                    .font(.system(size: 45))
+                    .fontWeight(.black)
+                    .fontDesign(.rounded)
+                    .foregroundColor(.white)
                 
-                Slider(value: $tables, in: 1...10)
-                    .padding(EdgeInsets(top: 0, leading: 80, bottom: 0, trailing: 80))
+                    Image("penguin2")
+                        .resizable()
+                    .frame(width: 260, height: 260)
+                    .padding(EdgeInsets(top: -2, leading: 0, bottom: -25, trailing: 0))
+                    
                 
-                HStack {
-                    ForEach(0..<numberOfQuestions.count) { number in
-                        Button {
-                            questions = number
-                            makerounds()
-                        }label: {
-                            Text(numberOfQuestions[number])
-                                .font(.system(size: 35))
-                                .foregroundColor(.white)
-                                .padding(15)
+                ZStack(){
+                    RoundedRectangle(cornerRadius: 40)
+                        .foregroundColor(.white)
+                        .padding(EdgeInsets(top: -10, leading: 29, bottom: -5, trailing: 28))
+                        .shadow(color: Color(.black).opacity(0.20), radius: 1, x: 7, y: 6)
+                    
+                    VStack(spacing: 0){
+                        
+                        Section(header: Text("Select Table Limit").fontWeight(.black).fontDesign(.rounded).foregroundColor(.gray)
+                            .padding(.top,10)){
+                            Text("\(String(format: "%02d", Int(tables)))")
+                                .font(.system(size: 120))
+                                .fontDesign(.rounded)
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(red: 0x9D / 255.0, green: 0x91 / 255.0, blue: 0xFF / 255.0))
+                                .padding(-5)
+                            
+                            
+                            Slider(value: $tables, in: 1...10)
+                                .padding(EdgeInsets(top: 0, leading: 123, bottom: 0, trailing: 123))
+                                .accentColor(Color(red: 0x9D / 255.0, green: 0x91 / 255.0, blue: 0xFF / 255.0))
+                                
                         }
-                        .background(Color(.orange))
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .padding(6)
+                        
+                        
+                        Section(header: Text("Challenge Level").fontWeight(.black).fontDesign(.rounded).foregroundColor(.gray).padding()){
+                            HStack {
+                                ForEach(0..<numberOfQuestions.count) { number in
+                                    Button {
+                                        questions = number
+                                        makerounds()
+                                    }label: {
+                                        Text(numberOfQuestions[number])
+                                            .font(.system(size: 35))
+                                            .fontDesign(.rounded)
+                                            .fontWeight(.black)
+                                            .foregroundColor(.white)
+                                            .padding(15)
+                                    }
+                                    .background(Color(red: 173.0/255.0, green: 216.0/255.0, blue: 230.0/255.0))
+                                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                                    .shadow(color: Color(.black).opacity(0.40), radius: 1, x: 6, y: 2)
+                                    .padding(6)
+                                    
+                                }
+                                
+                            }
+                        }
+                        
+                        NavigationLink(destination: Gaming(tables: $tables, numberOfRounds: $numberOfRounds)){
+                            Image(systemName: "play.fill")
+                                .font(.system(size: 50))
+                                .foregroundColor(.white)
+                                .frame(width: 90, height: 90)
+                        }
+                        .background(Color(red: 247.0 / 255.0, green: 212.0 / 255.0, blue: 123.0 / 255.0))
+                        .clipShape(RoundedRectangle(cornerRadius: 50))
+                        .shadow(color: Color(.black).opacity(0.40), radius: 1, x: 6, y: 2)
+                        .padding(20)
+                        
                         
                     }
                 }
-                
             }
-            
-            NavigationLink(destination: Gaming(tables: $tables, numberOfRounds: $numberOfRounds)){
-                Image(systemName: "play.fill")
-                    .font(.system(size: 50))
-                    .foregroundColor(.white)
-                    .frame(width: 90, height: 90)
-            }
-            .background(Color(red: 0.5, green: 0.7, blue: 1.0))
-            .clipShape(RoundedRectangle(cornerRadius: 50))
-            .padding(.top, 40)
-            
-            
-            
         }
     }
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C624DD42AD6221400C5FFF3 /* EndGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C624DD32AD6221300C5FFF3 /* EndGame.swift */; };
+		1C6BBE562AD769FC00F8D963 /* teste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6BBE552AD769FC00F8D963 /* teste.swift */; };
 		1C8DB3DB2ACF630D003FC200 /* Gaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8DB3DA2ACF630D003FC200 /* Gaming.swift */; };
 		1C9567702ACEE24600D076EF /* FunnyMathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C95676F2ACEE24600D076EF /* FunnyMathApp.swift */; };
 		1C9567722ACEE24600D076EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9567712ACEE24600D076EF /* ContentView.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		1C624DD32AD6221300C5FFF3 /* EndGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGame.swift; sourceTree = "<group>"; };
+		1C6BBE552AD769FC00F8D963 /* teste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teste.swift; sourceTree = "<group>"; };
 		1C8DB3DA2ACF630D003FC200 /* Gaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gaming.swift; sourceTree = "<group>"; };
 		1C95676C2ACEE24600D076EF /* FunnyMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FunnyMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C95676F2ACEE24600D076EF /* FunnyMathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunnyMathApp.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				1C95677F2ACEF31100D076EF /* SetGame.swift */,
 				1C8DB3DA2ACF630D003FC200 /* Gaming.swift */,
 				1C624DD32AD6221300C5FFF3 /* EndGame.swift */,
+				1C6BBE552AD769FC00F8D963 /* teste.swift */,
 			);
 			path = FunnyMath;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				1C8DB3DB2ACF630D003FC200 /* Gaming.swift in Sources */,
 				1C9567702ACEE24600D076EF /* FunnyMathApp.swift in Sources */,
 				1C624DD42AD6221400C5FFF3 /* EndGame.swift in Sources */,
+				1C6BBE562AD769FC00F8D963 /* teste.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
